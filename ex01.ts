@@ -30,12 +30,19 @@ const letter: any = {
 
 function lowerCase(str:string){
     let low=''
+    let alph='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     for (var i=0; i<str.length; i++){
-        low=low.concat(letter[str[i]])
+        if (alph.includes(str[i])){
+            low=low.concat(letter[str[i]])
+        }
+        else{
+            low=low.concat(str[i])
+        }
+        
     }
     return low
 
 }
 
 
-console.log(lowerCase('COUCOU'))
+console.log(lowerCase('COU!OU'))
