@@ -30,11 +30,18 @@ const LETTER: any = {
 
 function upperCase(stri:string){
     let upper=''
+    let ALPH='abcdefghijklmnopqrstuvwxyz'
     for (var x=0; x<stri.length; x++){
-        upper=upper.concat(LETTER[stri[x]])
+        if (ALPH.includes(stri[x])){
+            upper=upper.concat(LETTER[stri[x]])
+        }
+        else{
+            upper=upper.concat(stri[x])
+        }
+        
     }
     return upper
 
 }
 
-console.log(upperCase('coucou'))
+console.log(upperCase('cOu!ou'))
